@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fatima Hashmi | Portfolio</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #f5f5f5;
+      --text-light: #333;
+      --bg-dark: #1e1e2f;
+      --text-dark: #ffffff;
+      --primary-accent: #5e60ce;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      background-color: var(--bg-dark);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: var(--primary-accent);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: left;
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .dark-toggle {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--primary-accent);
+      color: white;
+      border: none;
+      padding: 0.4rem 0.7rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .dark-toggle:hover {
+      background: #4d4fe0;
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .project {
+      background: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .dark-mode .project {
+      background: #2c2c3c;
+      color: white;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      background-color: #1e1e2f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fatima Hashmi</h1>
+    <p>Aspiring Game Developer</p>
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="about" class="section" data-aos="fade-up">
+      <h2>About Me</h2>
+      <p>I’m a Computer Science student learning C#, Unity, HTML, and JavaScript. My goal is to become a game developer and contribute to AAA studios like Activision.</p>
+    </section>
+
+    <section id="skills" class="section" data-aos="fade-up" data-aos-delay="100">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Python, C# (learning)</li>
+        <li>Unity (beginner), Visual Studio, Git & GitHub</li>
+        <li>Responsive Design, UI/UX Basics</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section" data-aos="fade-up" data-aos-delay="200">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>2D Platformer Game (In Progress)</h3>
+        <p>Unity + C#: Character movement, scoring, and basic enemies.</p>
+        <a href="#">View on GitHub</a>
+      </div>
+
+      <div class="project">
+        <h3>Personal Portfolio Website</h3>
+        <p>HTML + CSS + JavaScript: This responsive site showcases my projects and skills.</p>
+        <a href="#">View Code</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section" data-aos="fade-up" data-aos-delay="300">
+      <h2>Contact</h2>
+      <p>Email: fatima8.hashmi@gmail.com</p>
+      <p>GitHub: github.com/fatimahashmi</p>
+      <p>LinkedIn: linkedin.com/in/fatimahashmi</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Fatima Hashmi. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
